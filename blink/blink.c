@@ -11,7 +11,7 @@ int16_t main(void) {
 
 
     led_on(&led1);
-    timer_setPeriod(&timer2, 0.5);
+    timer_setPeriod(&timer2, 0.6);
     timer_start(&timer2);
 
     while (1) {
@@ -21,6 +21,9 @@ int16_t main(void) {
         }
         led_write(&led2, !sw_read(&sw2));
         led_write(&led3, !sw_read(&sw3));
+        if (!sw_read(&sw2)) {
+            timer_setPeriod(&timer2, .2);
+        }
     }
 }
 
