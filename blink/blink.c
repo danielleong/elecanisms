@@ -6,8 +6,9 @@
 
 int16_t main(void) {
     init_clock();
-    init_ui();
     init_timer();
+    init_ui();
+
 
     led_on(&led1);
     timer_setPeriod(&timer2, 0.5);
